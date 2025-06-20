@@ -3,6 +3,16 @@
 <head>
   <meta charset="UTF-8">
   <title>Services | MiniHome</title>
+
+  <!-- Google tag (gtag.js) -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-LXSD9E0DW8"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+    gtag('config', 'G-LXSD9E0DW8');
+  </script>
+
   <link rel="stylesheet" href="styles.css">
 </head>
 <body>
@@ -20,15 +30,36 @@
   </nav>
 
 
-  <section>
-    <h2>Our Services</h2>
-    <ul>
-      <li>🔑 Home Staging & Virtual Tours</li>
-      <li>📋 Legal Documentation Assistance</li>
-      <li>🏦 Finance & Home Loan Consulting</li>
-      <li>📍 Location-Based Recommendations</li>
-    </ul>
-  </section>
+<section class="section services">
+  <div class="container">
+    <div class="section-header">
+      <h2 class="section-title">Our Services</h2>
+      <p class="section-subtitle">Explore our offerings designed to make your home search effortless and rewarding.</p>
+    </div>
+    <div class="services-grid">
+      <div class="service-card">
+        <span class="service-icon">🔑</span>
+        <h3 class="service-title">Home Staging & Virtual Tours</h3>
+        <p class="service-description">Give buyers a better view with beautiful home staging and immersive 360° virtual experiences.</p>
+      </div>
+      <div class="service-card">
+        <span class="service-icon">📋</span>
+        <h3 class="service-title">Legal Documentation Assistance</h3>
+        <p class="service-description">We help simplify complex paperwork, ensuring all transactions are legally sound and stress-free.</p>
+      </div>
+      <div class="service-card">
+        <span class="service-icon">🏦</span>
+        <h3 class="service-title">Finance & Home Loan Consulting</h3>
+        <p class="service-description">Get expert advice on mortgage options and connect with trusted lenders at the best rates.</p>
+      </div>
+      <div class="service-card">
+        <span class="service-icon">📍</span>
+        <h3 class="service-title">Location-Based Recommendations</h3>
+        <p class="service-description">Receive tailored suggestions based on your lifestyle, commute, and neighborhood preferences.</p>
+      </div>
+    </div>
+  </div>
+</section>
      <footer class="footer">
     <div class="footer-content">
       <div class="footer-logo">MiniHome</div>
