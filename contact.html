@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Contact | MiniHome</title>
+
+  <!-- Google tag (gtag.js) -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-LXSD9E0DW8"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag() { dataLayer.push(arguments); }
+    gtag('js', new Date());
+    gtag('config', 'G-LXSD9E0DW8');
+  </script>
+
+  <!-- Microsoft Clarity tracking code -->
+  <script type="text/javascript">
+    (function (c, l, a, r, i, t, y) {
+      c[a] = c[a] || function () { (c[a].q = c[a].q || []).push(arguments) };
+      t = l.createElement(r); t.async = 1; t.src = "https://www.clarity.ms/tag/" + i;
+      y = l.getElementsByTagName(r)[0]; y.parentNode.insertBefore(t, y);
+    })(window, document, "clarity", "script", "s2a9bav38j");
+  </script>
+
+  <link rel="stylesheet" href="styles.css" />
+</head>
+
+<body>
+  <nav class="navbar">
+    <div class="nav-container">
+      <a href="index.html" class="logo">🏡 MiniHome</a>
+      <ul class="nav-links">
+        <form action="search.html" method="GET" class="search-form">
+          <input type="text" name="q" placeholder="Search properties..." required>
+          <button type="submit">🔍</button>
+        </form>
+
+        <li><a href="index.html">Home</a></li>
+        <li><a href="about.html" class="active">About</a></li>
+        <li><a href="listings.html">Listings</a></li>
+        <li><a href="services.html">Services</a></li>
+        <li><a href="contact.html">Contact</a></li>
+      </ul>
+    </div>
+  </nav>
+
+  <section class="section contact">
+    <div class="container">
+      <div class="contact-content">
+        <h2 class="section-title">Get In Touch</h2>
+        <p class="section-subtitle">Ready to find your dream home? Let’s connect.</p>
+        <form class="contact-form">
+          <div class="form-group">
+            <label for="name">Full Name</label>
+            <input type="text" id="name" name="name" placeholder="Enter your full name" required>
+          </div>
+
+          <div class="form-group">
+            <label for="email">Email Address</label>
+            <input type="email" id="email" name="email" placeholder="Enter your email address" required>
+          </div>
+
+          <div class="form-group">
+            <label for="phone">Phone Number</label>
+            <input type="tel" id="phone" name="phone" placeholder="Enter your phone number" required>
+          </div>
+
+          <div class="form-group">
+            <label for="budget">Budget Range</label>
+            <input type="text" id="budget" name="budget" placeholder="e.g., ₹30-50 Lakhs">
+          </div>
+
+          <div class="form-group">
+            <label for="message">Message</label>
+            <textarea id="message" name="message" rows="4" placeholder="Tell us about your requirements..."
+              required></textarea>
+          </div>
+
+          <button type="submit" class="submit-btn">Send Message</button>
+        </form>
+      </div>
+    </div>
+  </section>
+
+  <footer class="footer">
+    <div class="footer-content">
+      <div class="footer-logo">MiniHome</div>
+      <p class="footer-text">Your trusted partner in finding the perfect home. Making dreams come true, one family at a
+        time.</p>
+      <div class="footer-links">
+        <a href="about.html">About Us</a>
+        <a href="listings.html">Properties</a>
+        <a href="services.html">Services</a>
+        <a href="contact.html">Contact</a>
+        <a href="#">Privacy Policy</a>
+        <a href="#">Terms of Service</a>
+      </div>
+      <div class="footer-bottom">
+        <p>&copy; 2025 MiniHome Real Estate. All rights reserved.</p>
+      </div>
+    </div>
+  </footer>
+</body>
+
+</html>

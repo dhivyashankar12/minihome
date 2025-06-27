@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>Search Results | MiniHome</title>
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+  <nav class="navbar">
+    <div class="nav-container">
+      <a href="index.html" class="logo">🏡 MiniHome</a>
+      <ul class="nav-links">
+        <li><a href="index.html">Home</a></li>
+        <li><a href="about.html">About</a></li>
+        <li><a href="listings.html">Listings</a></li>
+        <li><a href="services.html">Services</a></li>
+        <li><a href="contact.html">Contact</a></li>
+      </ul>
+      <!-- Search Bar -->
+      <form action="search.html" method="GET" class="search-form">
+        <input type="text" name="q" placeholder="Search properties..." required />
+        <button type="submit">🔍</button>
+      </form>
+    </div>
+  </nav>
+
+  <section class="section">
+    <div class="container">
+      <h2>Search Results for: <span id="query-text"></span></h2>
+      <div id="results" class="property-grid"></div>
+    </div>
+  </section>
+
+  <script>
+    // Listings Data
+    const listings = [
+      {
+        title: "Luxury Villa - Coimbatore",
+        location: "Race Course, Coimbatore",
+        price: "₹1.5 Crore",
+        image: "images/house1.jpeg",
+        features: ["4 BHK", "3200 sqft", "Private Garden"]
+      },
+      {
+        title: "Modern Apartment - Chennai",
+        location: "Velachery, Chennai",
+        price: "₹85 Lakhs",
+        image: "images/house2.jpeg",
+        features: ["3 BHK", "1500 sqft", "Swimming Pool"]
+      },
+      {
+        title: "Hillview Villa - Ooty",
+        location: "Fern Hill, Ooty",
+        price: "₹2.3 Crore",
+        image: "images/house3.jpeg",
+        features: ["5 BHK", "4000 sqft", "Mountain View"]
+      },
+      {
+        title: "Budget Flat - Bengaluru",
+        location: "Whitefield, Bengaluru",
+        price: "₹58 Lakhs",
+        image: "images/house1.jpeg",
+        features: ["2 BHK", "950 sqft", "Gym + Clubhouse"]
+      }
+    ];
+
+    // Read query param
+    const params = new URLSearchParams(window.location.search);
+    const query = params.get("q")?.toLowerCase() || "";
+
+    // Show query in heading
+    document.getElementById("query-text").textContent = query || "Nothing";
+
+    // Filter listings
+    const filtered = listings.filter(listing =>
+      listing.title.toLowerCase().includes(query) ||
+      listing.location.toLowerCase().includes(query) ||
+      listing.features.some(f => f.toLowerCase().includes(query))
+    );
+
+    // Display results
+    const resultsDiv = document.getElementById("results");
+
+    if (filtered.length === 0) {
+      resultsDiv.innerHTML = "<p>No properties matched your search.</p>";
+    } else {
+      resultsDiv.innerHTML = filtered.map(listing => `
+        <div class="property-card">
+          <img src="${listing.image}" alt="${listing.title}" class="property-image" />
+          <div class="property-details">
+            <h3 class="property-title">${listing.title}</h3>
+            <p class="property-location">${listing.location}</p>
+            <p class="property-price">${listing.price}</p>
+            <ul class="property-features">
+              ${listing.features.map(f => `<li>${f}</li>`).join("")}
+            </ul>
+            <a href="contact.html" class="cta-button primary">Book Visit</a>
+          </div>
+        </div>
+      `).join("");
+    }
+  </script>
+</body>
+</html>
