@@ -16,7 +16,6 @@
         <li><a href="services.html">Services</a></li>
         <li><a href="contact.html">Contact</a></li>
       </ul>
-      <!-- Search Bar -->
       <form action="search.html" method="GET" class="search-form">
         <input type="text" name="q" placeholder="Search properties..." required />
         <button type="submit">🔍</button>
@@ -32,7 +31,7 @@
   </section>
 
   <script>
-    // Listings Data
+    // Listings Data (Now with 7 total)
     const listings = [
       {
         title: "Luxury Villa - Coimbatore",
@@ -61,24 +60,41 @@
         price: "₹58 Lakhs",
         image: "images/house1.jpeg",
         features: ["2 BHK", "950 sqft", "Gym + Clubhouse"]
+      },
+      {
+        title: "Beachfront House - Pondicherry",
+        location: "Serenity Beach, Pondicherry",
+        price: "₹1.2 Crore",
+        image: "images/house4.jpg",
+        features: ["3 BHK", "1800 sqft", "Sea View Balcony"]
+      },
+      {
+        title: "Lakeview Villa - Kodaikanal",
+        location: "Lake Road, Kodaikanal",
+        price: "₹2.7 Crore",
+        image: "images/house3.jpeg",
+        features: ["4 BHK", "3600 sqft", "Lakefront Deck"]
+      },
+      {
+        title: "Modern Duplex - Hyderabad",
+        location: "Gachibowli, Hyderabad",
+        price: "₹1.8 Crore",
+        image: "images/house2.jpeg",
+        features: ["4 BHK", "2800 sqft", "Home Theater Room"]
       }
     ];
 
-    // Read query param
     const params = new URLSearchParams(window.location.search);
     const query = params.get("q")?.toLowerCase() || "";
 
-    // Show query in heading
     document.getElementById("query-text").textContent = query || "Nothing";
 
-    // Filter listings
     const filtered = listings.filter(listing =>
       listing.title.toLowerCase().includes(query) ||
       listing.location.toLowerCase().includes(query) ||
       listing.features.some(f => f.toLowerCase().includes(query))
     );
 
-    // Display results
     const resultsDiv = document.getElementById("results");
 
     if (filtered.length === 0) {
