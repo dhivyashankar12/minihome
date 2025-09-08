@@ -88,7 +88,11 @@
     const query = params.get("q")?.toLowerCase() || "";
 
     document.getElementById("query-text").textContent = query || "Nothing";
-
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag("event", "view_search_results", {
+      search_term: query
+    });
     const filtered = listings.filter(listing =>
       listing.title.toLowerCase().includes(query) ||
       listing.location.toLowerCase().includes(query) ||
